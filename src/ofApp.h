@@ -5,20 +5,10 @@
 #include "ofxKinect.h"
 #include "GuiApp.h"
 
-class Particula {
-    public:
-        Particula(float x,float y);
-        ofVec2f pos;
-        ofVec2f velocidade;
-        ofColor cor;
-
-        void update(float dt, ofVec2f aceleracao);
-        void draw();
-};
-
 class ofApp : public ofBaseApp{
 
 	public:
+		
 		void setup();
 		void update();
 		void draw();
@@ -34,10 +24,10 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
-		
+
         shared_ptr<GuiApp> gui;
         shared_ptr<ofAppBaseWindow> window;
         shared_ptr<ofBaseGLRenderer> gl;
 
-        vector<Particula*> particulas;
+        ofPixels pixelsKinect;
 };

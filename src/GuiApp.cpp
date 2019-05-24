@@ -8,6 +8,8 @@ void GuiApp::setup(){
     gui.setup();
     ImGui::GetIO().MouseDrawCursor = false;
     aceleracao = ofVec2f(1,0);
+    anguloKinect = 0;
+    contrasteKinect
 }
 
 void GuiApp::update(){
@@ -26,8 +28,13 @@ void GuiApp::draw() {
 
     // Botões de liga e desliga do kinect
     if ( kinectGlobal.isConnected() ) {
+        kinectGlobal.setCameraTiltAngle(anguloKinect);
         ImGui::SliderInt("angulo", &anguloKinect, -30, 30);
+        ImGui::SliderFloat("Brilho", &brilhoKinect, 0, 1);
+        ImGui::SliderFloat("Contraste", &contrasteKinect, 0, 1);
+        ImGui::SliderInt("Blur", &blurKinect, 0, 50);
         if (ImGui::Button("Desliga Kinect")) { 
+            kinectGlobal.close();
         } 
     } else {
         if (ImGui::Button("Ligar Kinect")) { 
