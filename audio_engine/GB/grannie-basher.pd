@@ -1,8 +1,8 @@
-#N canvas 23 23 1203 622 10;
+#N canvas 37 133 1203 622 10;
 #X obj 101 118 cnv 15 526 150 empty empty value 100 13 2 17 -249659
 -83269 0;
 #X obj 172 143 hsl 100 12 0 1 0 0 \$0-pitch \$0-pitch-r pitch -45 7
-0 13 -13330 -262144 -4160 5700 1;
+0 13 -13330 -262144 -4160 4900 1;
 #X obj 280 143 hsl 100 12 0 1 0 0 \$0-pitch-rnd \$0-pitch-rnd-r random/jitter
 -4 -12 2 17 -13330 -262144 -86853 2900 1;
 #X obj 171 158 hsl 100 12 0 1 0 0 \$0-duration \$0-duration-r duration
@@ -33,7 +33,7 @@ empty -2 -6 0 10 -13330 -262144 -1 5700 1;
 #X text 127 32 delay line granulizer;
 #X text 136 48 hard.off@gmail.com;
 #X obj 171 204 hsl 100 12 0 1 0 0 \$0-vcf \$0-vcf-r filter -52 7 0
-13 -13330 -262144 -4160 6700 1;
+13 -13330 -262144 -4160 9900 1;
 #X obj 171 234 hsl 100 12 0 1 0 0 \$0-feedback \$0-feedback-r feedback
 -68 7 0 13 -13330 -262144 -4160 1700 1;
 #X obj 388 234 hsl 100 12 0 1 0 0 \$0-feedback-time \$0-feedback-time-r
@@ -51,7 +51,7 @@ empty -2 -6 0 10 -13330 -262144 -1 0 1;
 #X obj 280 219 hsl 100 12 0 1 0 0 \$0-autopan-rnd \$0-autopan-rnd-r
 empty -2 -6 0 10 -13330 -262144 -1 0 1;
 #X obj 171 249 hsl 100 12 0 1 0 0 \$0-feedback-lfo \$0-feedback-lfo-r
-fb-lfo -52 7 0 13 -13330 -262144 -4160 5800 1;
+fb-lfo -52 7 0 13 -13330 -262144 -4160 7100 1;
 #X obj 280 249 hsl 100 12 0 1 0 0 \$0-feedback-lfo-rnd \$0-feedback-lfo-rnd-r
 empty -2 -6 0 10 -13330 -262144 -1 4200 1;
 #X obj 388 249 hsl 100 12 0 1 0 0 \$0-feedback-lfo-depth \$0-feedback-lfo-depth-r
@@ -571,7 +571,7 @@ empty -2 -6 0 10 -13330 -262144 -1 6300 1;
 #X obj 617 534 grandma 11 \$0 \$0-R;
 #X obj 631 557 grandma 13 \$0 \$0-R;
 #X obj 549 258 hsl 60 10 0 1 0 0 \$0-mix \$0-mix-r mix 17 -6 0 12 -16662
--262144 -4160 0 1;
+-262144 -4160 1700 1;
 #X obj 67 452 *~;
 #X obj 94 452 *~;
 #X obj 227 363 r \$0-mix;
@@ -720,6 +720,8 @@ empty -2 -6 0 10 -13330 -262144 -1 6300 1;
 #X msg 663 161 10;
 #X text 410 55 2019: ramp all parameters at preset change \; added
 3 presets [Brizo];
+#X obj 572 295 inlet;
+#X obj 572 323 s \$0-mix-r;
 #X connect 33 0 36 0;
 #X connect 33 0 57 0;
 #X connect 37 0 38 0;
@@ -783,4 +785,5 @@ empty -2 -6 0 10 -13330 -262144 -1 6300 1;
 #X connect 101 2 76 0;
 #X connect 106 0 107 0;
 #X connect 107 0 105 0;
+#X connect 109 0 110 0;
 #X coords 0 -1 1 1 528 172 1 100 100;
