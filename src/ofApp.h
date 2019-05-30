@@ -4,6 +4,7 @@
 #include "ofxOpenCv.h"
 #include "ofxKinect.h"
 #include "GuiApp.h"
+#include "EmissorParticulas.h"
 
 class ofApp : public ofBaseApp{
 
@@ -29,5 +30,9 @@ class ofApp : public ofBaseApp{
         shared_ptr<ofAppBaseWindow> window;
         shared_ptr<ofBaseGLRenderer> gl;
 
-        ofPixels pixelsKinect;
+        ofxCvGrayscaleImage grayImage;
+        ofPixels pixelsColisao;
+
+        vector<EmissorParticulas*> emissores;
+        float t0, t1, dt;
 };
