@@ -8,17 +8,14 @@
 
 class GuiApp: public ofBaseApp {
     public:
-        vector<Particula*> particulas;
         
         ofxKinect kinectGlobal;
         int anguloKinect;
-        int brilhoKinect;
-        int contrasteKinect;
+        float brilhoKinect;
+        float contrasteKinect;
         int blurKinect;
         bool mirrorKinect;
         bool mirrorTela;
-
-        ofVec2f aceleracao;
 
         void setup();
         void update();

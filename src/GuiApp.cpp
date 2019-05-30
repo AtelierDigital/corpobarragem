@@ -7,9 +7,10 @@ float t0, t1;
 void GuiApp::setup(){
     gui.setup();
     ImGui::GetIO().MouseDrawCursor = false;
-    aceleracao = ofVec2f(1,0);
     anguloKinect = 0;
-    contrasteKinect
+    contrasteKinect = 0.5;
+    brilhoKinect = 0.5;
+    blurKinect = 0;
 }
 
 void GuiApp::update(){

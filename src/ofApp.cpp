@@ -1,33 +1,37 @@
 #include "ofApp.h"
 
-
-int qtdPorSegundo = 7;
-
 //--------------------------------------------------------------
 void ofApp::setup(){
     ofBackground(0, 0, 0); 
+    grayImage.allocate(640,480);
+    t1 = ofGetElapsedTimef();
+    t0 = t1;
+
+    emissores.push_back( new EmissorParticulas(0, 100, ofColor(255,0,0)) );
+    emissores.push_back( new EmissorParticulas(0, 200, ofColor(255,0,255)) );
+    emissores.push_back( new EmissorParticulas(0, 300, ofColor(0,0,255)) );
+    emissores.push_back( new EmissorParticulas(0, 400, ofColor(0,255,255)) );
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    
-    float qtdSegundos = ofGetElapsedTimef()/1;
-    
-    // Adiciona partículas conforme o tempo passa
-    if(gui->particulas.size() < qtdPorSegundo*qtdSegundos) {
-        gui->particulas.push_back( new Particula(-30 , ofRandom(0, 475) )); 
-    }
 
+    t0 = t1;
+    t1 = ofGetElapsedTimef();
+    dt = t1 - t0; //tempo desde o ultimo update
     // Carrega os pixels do kinect
     if( gui->kinectGlobal.isConnected() ) {
         gui->kinectGlobal.update();
-        pixelsKinect = gui->kinectGlobal.getDepthPixels();
+        grayImage.setFromPixels(gui->kinectGlobal.getDepthPixels());
+        grayImage.brightnessContrast(gui->brilhoKinect, gui->contrasteKinect);
+        grayImage.blur(gui->blurKinect*2+1);
+        pixelsColisao = grayImage.getPixels();
     }
 
-    // Atualiza as partículas
-    for( int i = 0; i < gui->particulas.size(); i++ ) {
-        gui->particulas[i]->update(gui->dt, gui->aceleracao, pixelsKinect);
+    for( int i = 0; i < emissores.size(); i++ ) {
+        emissores[i]->update(pixelsColisao,dt);
     }
+
 }
 
 //--------------------------------------------------------------
@@ -35,12 +39,12 @@ void ofApp::draw(){
 
     // Desenha img do kinect para debug
     if( gui->kinectGlobal.isConnected() ) {
-        gui->kinectGlobal.drawDepth( 20, 20, 400, 300);
+        grayImage.draw( 20, 20, 400, 300);
     }
 
     // Desenha particulas
-    for( int i = 0; i < gui->particulas.size(); i++ ) {
-        gui->particulas[i]->draw();
+    for( int i = 0; i < emissores.size(); i++ ) {
+        emissores[i]->draw();
     }
 }
 
