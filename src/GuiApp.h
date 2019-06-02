@@ -16,6 +16,8 @@ class GuiApp: public ofBaseApp {
         int blurKinect;
         bool mirrorKinect;
         bool mirrorTela;
+        float nearThreshold_Kinect = 100;
+        float farThreshold_Kinect = 5520;
 
         void setup();
         void update();

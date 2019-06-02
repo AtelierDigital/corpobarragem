@@ -40,7 +40,7 @@ void Particula::update(float dt, ofVec2f aceleracao,ofPixels pixelsKinect) {
         int xk = int(pontoColisao.x);
         int yk = int(pontoColisao.y);
         if(xk < WKINECT && yk < HKINECT && xk>0 && yk>0 ) {
-            pixelValue = pixelsKinect[ yk*HKINECT + xk];
+            pixelValue = pixelsKinect[ yk*WKINECT + xk];
         }
         if(pixelValue > 180) {
             pos -= vetorColisao;

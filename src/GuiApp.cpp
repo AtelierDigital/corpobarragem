@@ -11,6 +11,9 @@ void GuiApp::setup(){
     contrasteKinect = 0.5;
     brilhoKinect = 0.5;
     blurKinect = 0;
+    
+    nearThreshold_Kinect = 100;
+    farThreshold_Kinect = 1100;
 }
 
 void GuiApp::update(){
@@ -34,6 +37,8 @@ void GuiApp::draw() {
         ImGui::SliderFloat("Brilho", &brilhoKinect, 0, 1);
         ImGui::SliderFloat("Contraste", &contrasteKinect, 0, 1);
         ImGui::SliderInt("Blur", &blurKinect, 0, 50);
+        ImGui::SliderFloat("Near", &nearThreshold_Kinect, 100, 3000);
+        ImGui::SliderFloat("Far", &farThreshold_Kinect, 200, 8000);
         if (ImGui::Button("Desliga Kinect")) { 
             kinectGlobal.close();
         } 
