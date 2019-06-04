@@ -14,6 +14,6 @@ class Particula {
         ofColor corOriginal;
         ofColor cor;
 
-        void update(float dt, ofVec2f aceleracao, ofPixels pixelsKinect);
+        void update(float dt, ofVec2f aceleracao, ofPixels &pixelsKinect);
         void draw();
 };

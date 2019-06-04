@@ -13,6 +13,6 @@ class EmissorParticulas {
         ofColor cor;
         
         float qtdSegundos;
-        void update(ofPixels pixelsColisao, float dt);
+        void update(ofPixels &pixelsColisao, float dt);
         void draw();
 };

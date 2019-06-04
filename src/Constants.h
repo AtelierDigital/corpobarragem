@@ -1,9 +1,11 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H 
 
-const int HKINECT = 640;
-const int WKINECT = 480;
-const int HSCREEN = 1920;
-const int WSCREEN = 1080;
+const int WKINECT = 640;
+const int HKINECT = 480;
+const int WSCREEN = 1024;
+const int HSCREEN = 768;
+const int WVIDEO = 1366;
+const int HVIDEO = 768;
 
 #endif

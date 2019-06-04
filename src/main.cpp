@@ -2,6 +2,7 @@
 #include "ofApp.h"
 #include "GuiApp.h"
 #include "ofAppGLFWWindow.h"
+#include "Constants.h"
 
 
 //========================================================================
@@ -9,15 +10,15 @@ int main(){
 	
 	ofGLFWWindowSettings settings;
 
-	settings.setSize(1920, 1080);
-	settings.setPosition(ofVec2f( 1366,0));
+	settings.setSize(WSCREEN, HSCREEN);
+	settings.setPosition(ofVec2f( 0,0));
 	settings.resizable = true;
 	settings.decorated = false;
 	settings.multiMonitorFullScreen = true;
 	settings.numSamples = 8;
 	shared_ptr<ofAppBaseWindow> mainWindow = ofCreateWindow(settings);
 
-	settings.setSize(1063, 950);
+	settings.setSize(400, 400);
 	settings.setPosition(ofVec2f( 0,0));
 	settings.resizable = true;
 	settings.decorated = true;

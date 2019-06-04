@@ -10,7 +10,7 @@ Particula::Particula(float x, float y, ofColor corEmissor) {
     tempoVida = 0;
 }
 
-void Particula::update(float dt, ofVec2f aceleracao,ofPixels pixelsKinect) {
+void Particula::update(float dt, ofVec2f aceleracao,ofPixels &pixelsKinect) {
     ofColor tempColor = cor;
     tempoVida += dt;
     velocidade+= aceleracao * dt;
@@ -23,7 +23,7 @@ void Particula::update(float dt, ofVec2f aceleracao,ofPixels pixelsKinect) {
     cor = tempColor;
 
     pos += velocidade * dt;
-    if ( pos.x > HKINECT + 10) {
+    if ( pos.x > WKINECT + 10) {
         pos.x = -20;
     }
     if(!pixelsKinect.isAllocated()) {

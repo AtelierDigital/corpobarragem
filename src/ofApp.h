@@ -15,11 +15,12 @@ class ofApp : public ofBaseApp{
         int OSCRemotePort;
     
 	public:
-		
+    
 		void setup();
 		void update();
 		void draw();
 
+        void sendOSC();
 		void keyPressed(int key);
 		void keyReleased(int key);
 		void mouseMoved(int x, int y );
@@ -36,7 +37,10 @@ class ofApp : public ofBaseApp{
         shared_ptr<ofAppBaseWindow> window;
         shared_ptr<ofBaseGLRenderer> gl;
 
-        ofxCvGrayscaleImage grayImage; // grayscale depth image
+        ofFbo fboColisao;
+        ofImage imgColisao;
+        ofPixels pixelsTemp;
+        ofxCvGrayscaleImage grayImage, grayColisao; // grayscale depth image
         ofxCvGrayscaleImage grayThreshNear; // the near thresholded image
         ofxCvGrayscaleImage grayThreshFar; // the far thresholded image
         ofImage mask;

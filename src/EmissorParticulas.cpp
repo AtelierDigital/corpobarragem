@@ -11,7 +11,7 @@ EmissorParticulas::EmissorParticulas(float x, float y, ofColor corEmissor) {
     cor.set(corEmissor);
 }
 
-void EmissorParticulas::update(ofPixels pixelsColisao, float dt) {
+void EmissorParticulas::update(ofPixels &pixelsColisao, float dt) {
     if(dt < 0) {
         return;
     }
