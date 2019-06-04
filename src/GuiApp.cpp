@@ -7,12 +7,12 @@ float t0, t1;
 void GuiApp::setup(){
     gui.setup();
     ImGui::GetIO().MouseDrawCursor = false;
-    anguloKinect = 0;
-    contrasteKinect = 0.5;
-    brilhoKinect = 0.5;
-    blurKinect = 0;
+    anguloKinect = 14;
+    contrasteKinect = 0.7;
+    brilhoKinect = 0.8;
+    blurKinect = 3;
     
-    nearThreshold_Kinect = 100;
+    nearThreshold_Kinect = 100;	
     farThreshold_Kinect = 1100;
 }
 

@@ -37,7 +37,7 @@ class ofApp : public ofBaseApp{
         shared_ptr<GuiApp> gui;
         shared_ptr<VideoApp> video;
         shared_ptr<ofAppBaseWindow> window;
-        shared_ptr<ofBaseGLRenderer> gl;
+        shared_ptr 	<ofBaseGLRenderer> gl;
 
         ofFbo fboColisao;
         ofImage imgColisao;

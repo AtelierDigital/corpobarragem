@@ -2,10 +2,10 @@
 
 Particula::Particula(float x, float y, ofColor corEmissor) {
     pos.set(x, y);
-    velocidade.set(0, 0);
+    velocidade.set(20, 0);
     cor.set(corEmissor);
     corOriginal.set(corEmissor);
-    cor.setBrightness(0);
+    cor.setBrightness(120);
     cor.setSaturation(100);
     tempoVida = 0;
 }
@@ -13,10 +13,13 @@ Particula::Particula(float x, float y, ofColor corEmissor) {
 void Particula::update(float dt, ofVec2f aceleracao,ofPixels &pixelsKinect) {
     ofColor tempColor = cor;
     tempoVida += dt;
-    velocidade+= aceleracao * dt;
+    velocidade+= aceleracao * dt * ofRandom(0.9, 1.1);
+    if(velocidade.x > 25) {
+        velocidade.x = 25;
+    }
     float brilho = cor.getBrightness();
     if(brilho < 120) {
-        tempColor.setBrightness(tempoVida*5);
+        tempColor.setBrightness(tempoVida*8);
     }
     tempColor.setSaturation(corOriginal.getSaturation());
     tempColor.setHue(corOriginal.getHue());
@@ -24,7 +27,13 @@ void Particula::update(float dt, ofVec2f aceleracao,ofPixels &pixelsKinect) {
 
     pos += velocidade * dt;
     if ( pos.x > WKINECT + 10) {
-        pos.x = -20;
+        pos.x = WKINECT + 10;
+    }
+    if(pos.y < 0) {
+        velocidade.y += 1;
+    }
+    if(pos.y > HKINECT) {
+        velocidade.y -= 1;
     }
     if(!pixelsKinect.isAllocated()) {
         return;
@@ -53,6 +62,6 @@ void Particula::draw() {
     
     // A particula vive no limite das medida do kinect
     // mas é desenhada de acordo com o tamanho da tela
-    ofDrawCircle( (pos.x/HKINECT)*HSCREEN, (pos.y/WKINECT)*WSCREEN, 2);
+    ofDrawCircle( (pos.x/HKINECT)*HSCREEN, (pos.y/WKINECT)*WSCREEN, ofRandom(1,3));
 }
 

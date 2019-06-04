@@ -3,9 +3,9 @@ using namespace std;
 
 
 void VideoApp::setup(){
-   
     videoPlayer.load("frente.mp4");
     videoPlayer.play();
+    ofBackground(0, 0, 0);
 }
 
 void VideoApp::update(){
@@ -13,8 +13,6 @@ void VideoApp::update(){
 }
 
 void VideoApp::draw() {
-    ofBackground(250, 60, 60);
-   
     videoPlayer.draw(0,0,WSCREENVIDEO, HSCREENVIDEO);
     
 }
