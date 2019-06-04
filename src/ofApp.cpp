@@ -20,6 +20,7 @@ void ofApp::setup(){
     if(!sender.setup(OSCRemoteAddress, OSCRemotePort)) {
         ofLogError("Failed to initialize ofxOscSender sender");
     }
+    
 }
 
 //--------------------------------------------------------------
@@ -39,9 +40,10 @@ void ofApp::update(){
         ofEnableBlendMode(OF_BLENDMODE_ADD);
         fboColisao.begin();
         ofClear(0,0,0);
-        ofSetColor(255,255,255,255);	
+        ofSetColor(255,255,255,255);
         grayImage.mirror(true, false);
-        grayImage.draw(0,0,640, 480);
+        grayImage.rotate(270, 320, 240);
+        grayImage.draw(-170,0,900, 500);
         fboColisao.end();
         ofEnableBlendMode(OF_BLENDMODE_ALPHA);
         
@@ -140,7 +142,7 @@ void ofApp::draw(){
     // Desenha img do kinect para debug
     if( gui->kinectGlobal.isConnected() ) {
         ofSetColor(255,255,255,255);
-        //imgColisao.draw( 0, 0, WSCREEN, HSCREEN);
+        imgColisao.draw( 0, 0, WSCREEN, HSCREEN);
     }
 
     // Desenha particulas
@@ -152,10 +154,11 @@ void ofApp::draw(){
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
 
+    cout << "positon:" << video->videoPlayer.getPosition() << "\n";
 }
 
 //--------------------------------------------------------------
-void ofApp::keyReleased(int key){
+void ofApp::keyReleased(int key){	
 
 }
 

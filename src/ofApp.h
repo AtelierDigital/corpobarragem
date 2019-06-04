@@ -5,6 +5,7 @@
 #include "ofxKinect.h"
 #include "ofxOSC.h"
 #include "GuiApp.h"
+#include "VideoApp.h"
 #include "EmissorParticulas.h"
 
 class ofApp : public ofBaseApp{
@@ -34,6 +35,7 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 
         shared_ptr<GuiApp> gui;
+        shared_ptr<VideoApp> video;
         shared_ptr<ofAppBaseWindow> window;
         shared_ptr<ofBaseGLRenderer> gl;
 
