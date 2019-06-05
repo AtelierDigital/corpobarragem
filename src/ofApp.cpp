@@ -58,7 +58,7 @@ void ofApp::update(){
         fboColisao.begin();
         ofClear(0,0,0);
         ofSetColor(255,255,255,255);
-        grayImage.mirror(true, false);
+        grayImage.mirror(true, true);
         grayImage.rotate(270, 320, 240);
         grayImage.draw(-170,0,900, 500);
         fboColisao.end();

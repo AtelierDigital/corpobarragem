@@ -13,7 +13,7 @@ void GuiApp::setup(){
     blurKinect = 3;
     
     nearThreshold_Kinect = 100;	
-    farThreshold_Kinect = 1100;
+    farThreshold_Kinect = 4100;
 }
 
 void GuiApp::update(){

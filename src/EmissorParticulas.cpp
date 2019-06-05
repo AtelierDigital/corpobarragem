@@ -10,7 +10,7 @@ EmissorParticulas::EmissorParticulas(float x, float y, ofColor corEmissor, float
     qtdMaxParticulas = 150;
     aceleracao = ofVec2f(2,0);
     qtdSegundos = 0;
-
+    
     cor.set(corEmissor);
 }
 
