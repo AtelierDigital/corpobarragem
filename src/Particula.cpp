@@ -51,8 +51,8 @@ void Particula::update(float dt, ofVec2f aceleracao,ofPixels &pixelsKinect) {
         if(xk < WKINECT && yk < HKINECT && xk>0 && yk>0 ) {
             pixelValue = pixelsKinect[ yk*WKINECT + xk];
         }
-        if(pixelValue > 180) {
-            pos -= vetorColisao;
+        if(pixelValue > 50) {
+            pos -= vetorColisao*((pixelValue/200));
         }
     }
 }
@@ -62,6 +62,6 @@ void Particula::draw() {
     
     // A particula vive no limite das medida do kinect
     // mas é desenhada de acordo com o tamanho da tela
-    ofDrawCircle( (pos.x/HKINECT)*HSCREEN, (pos.y/WKINECT)*WSCREEN, ofRandom(1,3));
+    ofDrawCircle( (pos.x/HKINECT)*HSCREEN, (pos.y/WKINECT)*WSCREEN, ofRandom(2,5));
 }
 

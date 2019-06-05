@@ -3,7 +3,7 @@
 #include "ofMain.h"
 #include "ofxOpenCv.h"
 #include "ofxKinect.h"
-#include "ofxOSC.h"
+#include "ofxOsc.h"
 #include "GuiApp.h"
 #include "VideoApp.h"
 #include "EmissorParticulas.h"
@@ -39,7 +39,8 @@ class ofApp : public ofBaseApp{
         shared_ptr<ofAppBaseWindow> window;
         shared_ptr 	<ofBaseGLRenderer> gl;
 
-        ofFbo fboColisao;
+        ofShader shaderAgua;
+        ofFbo fboColisao, fboParticulas;
         ofImage imgColisao;
         ofPixels pixelsTemp;
         ofxCvGrayscaleImage grayImage, grayColisao; // grayscale depth image

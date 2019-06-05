@@ -9,12 +9,15 @@ void VideoApp::setup(){
 }
 
 void VideoApp::update(){
-    videoPlayer.update();
+    if(videoPlayer.isLoaded()) {
+        videoPlayer.update();
+    }
 }
 
 void VideoApp::draw() {
-    videoPlayer.draw(0,0,WSCREENVIDEO, HSCREENVIDEO);
-    
+    if(videoPlayer.isLoaded()) {
+        videoPlayer.draw(0,0,WSCREENVIDEO, HSCREENVIDEO);
+    }
 }
 
 void VideoApp::mousePressed(int x, int y, int iButton) {

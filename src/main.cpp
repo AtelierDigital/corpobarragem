@@ -20,7 +20,7 @@ int main(){
     shared_ptr<ofAppBaseWindow> videoWindow = ofCreateWindow(settings);
     
     settings.setSize(WSCREEN, HSCREEN);
-    settings.setPosition(ofVec2f( 0,0));
+    settings.setPosition(ofVec2f( WSCREENVIDEO,0));
     settings.resizable = true;
     settings.decorated = true;
     settings.multiMonitorFullScreen = true;
