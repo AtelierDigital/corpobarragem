@@ -7,6 +7,12 @@ void ofApp::setup(){
     shaderAgua.load("../data/shaders/vertexdummy.c","../data/shaders/reflexosAgua.c");
     grayImage.allocate(WKINECT,HKINECT);
     fboColisao.allocate(WKINECT, HKINECT);
+    if( !gui->kinectGlobal.isConnected() ) {
+    gui->kinectGlobal.setRegistration(true);
+        gui->kinectGlobal.init();
+        gui->kinectGlobal.open();
+    gui->kinectGlobal.setCameraTiltAngle(0);
+    }
     fboParticulas.allocate(WSCREEN,HSCREEN);
     imgColisao.allocate(WKINECT, HKINECT, OF_IMAGE_COLOR);
     grayColisao.allocate(WKINECT, HKINECT);
@@ -43,7 +49,7 @@ void ofApp::setup(){
     emissores.push_back( new EmissorParticulas(0, 450, ofColor(255,250,255), 97, 30) );
 
     for(int i = 0;i<50; i++) {
-        emissores.push_back( new EmissorParticulas(0, 440, ofColor(255,250,255), 97 + i*3, 30) );
+        emissores.push_back( new EmissorParticulas(0, 440*((i%10)/10)+20, ofColor(255,250,255), 97 + i*3, 30) );
     }
     
     OSCRemoteAddress = "localhost";
@@ -199,8 +205,7 @@ void ofApp::draw(){
     
 
     fboParticulas.draw(0,0);
-//    shaderAgua.end();
-    fboColisao.draw(0,0, 400, 300);
+//    shaderAgua.end();	
 }
 
 //--------------------------------------------------------------
