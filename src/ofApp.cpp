@@ -27,12 +27,13 @@ void ofApp::setup(){
     emissores.push_back( new EmissorParticulas(0, 190, ofColor(50,90,155), 3, 20) );
     emissores.push_back( new EmissorParticulas(0, 220, ofColor(90,205,255), 1, 25) );
     
-    emissores.push_back( new EmissorParticulas(0, 250, ofColor(255,250,60), 19, 30) );
-    emissores.push_back( new EmissorParticulas(0, 400, ofColor(155,150,255), 19, 30) );
-    emissores.push_back( new EmissorParticulas(0, 350, ofColor(155,155,255), 19.9, 30) );
-    emissores.push_back( new EmissorParticulas(0, 300, ofColor(155,150,255), 20, 30) );
-    emissores.push_back( new EmissorParticulas(0, 200, ofColor(255,190,50), 18, 30) );
-    emissores.push_back( new EmissorParticulas(0, 100, ofColor(255,190,50), 19, 30) );
+    emissores.push_back( new EmissorParticulas(0, 200, ofColor(255,250,160), 19, 30) );
+    emissores.push_back( new EmissorParticulas(0, 50, ofColor(195,190,255), 19, 30) );
+    emissores.push_back( new EmissorParticulas(0, 100, ofColor(195,195,255), 19.9, 30) );
+    emissores.push_back( new EmissorParticulas(0, 150, ofColor(195,190,255), 20, 30) );
+    emissores.push_back( new EmissorParticulas(0, 250, ofColor(255,220,150), 18, 30) );
+    emissores.push_back( new EmissorParticulas(0, 350, ofColor(255,220,150), 19, 30) );
+    emissores.push_back( new EmissorParticulas(0, 430, ofColor(255,250,250), 19, 30) );
     
     emissores.push_back( new EmissorParticulas(0, 150, ofColor(255,250,250), 42, 30) );
     emissores.push_back( new EmissorParticulas(0, 200, ofColor(255,250,255), 43, 30) );
@@ -41,17 +42,56 @@ void ofApp::setup(){
     emissores.push_back( new EmissorParticulas(0, 350, ofColor(255,250,220), 46, 30) );
     emissores.push_back( new EmissorParticulas(0, 450, ofColor(255,250,255), 47, 30) );
     
-    emissores.push_back( new EmissorParticulas(0, 150, ofColor(255,250,250), 62, 30) );
-    emissores.push_back( new EmissorParticulas(0, 200, ofColor(255,250,255), 63, 30) );
-    emissores.push_back( new EmissorParticulas(0, 250, ofColor(235,250,250), 74, 30) );
-    emissores.push_back( new EmissorParticulas(0, 300, ofColor(255,220,255), 75, 30) );
-    emissores.push_back( new EmissorParticulas(0, 350, ofColor(255,250,220), 86, 30) );
-    emissores.push_back( new EmissorParticulas(0, 450, ofColor(255,250,255), 97, 30) );
-
-    for(int i = 0;i<50; i++) {
-        emissores.push_back( new EmissorParticulas(0, 440*((i%10)/10)+20, ofColor(255,250,255), 97 + i*3, 30) );
-    }
+    emissores.push_back( new EmissorParticulas(0, 150, ofColor(255,240,255), 62, 30) );
+    emissores.push_back( new EmissorParticulas(0, 160, ofColor(255,240,255), 63, 30) );
+    emissores.push_back( new EmissorParticulas(0, 170, ofColor(240,240,255), 64, 30) );
+    emissores.push_back( new EmissorParticulas(0, 200, ofColor(255,250,255), 66, 30) );
+    emissores.push_back( new EmissorParticulas(0, 300, ofColor(250,255,255), 68, 30) );
+    emissores.push_back( new EmissorParticulas(0, 400, ofColor(250,255,255), 72, 30) );
+    emissores.push_back( new EmissorParticulas(0, 100, ofColor(255,255,200), 72, 30) );
+    emissores.push_back( new EmissorParticulas(0, 120, ofColor(255,235,200), 73, 30) );
+    emissores.push_back( new EmissorParticulas(0, 250, ofColor(255,255,200), 75, 30) );
+    emissores.push_back( new EmissorParticulas(0, 300, ofColor(255,255,200), 76, 30) );
+    emissores.push_back( new EmissorParticulas(0, 300, ofColor(255,255,250), 76, 30) );
+    emissores.push_back( new EmissorParticulas(0, 300, ofColor(255,255,250), 76, 30) );
     
+    emissores.push_back( new EmissorParticulas(0, 200, ofColor(200,250,255), 84, 20) );
+    emissores.push_back( new EmissorParticulas(0, 210, ofColor(180,200,255), 84.5, 20) );
+    emissores.push_back( new EmissorParticulas(0, 215, ofColor(150,200,255), 85, 20) );
+    emissores.push_back( new EmissorParticulas(0, 180, ofColor(190,255,255), 85.2, 20) );
+    emissores.push_back( new EmissorParticulas(0, 185, ofColor(100,185,255), 85.4, 20) );
+    emissores.push_back( new EmissorParticulas(0, 190, ofColor(50,90,155), 86, 20) );
+
+    emissores.push_back( new EmissorParticulas(0, 230, ofColor(150,190,255), 98, 20) );
+    emissores.push_back( new EmissorParticulas(0, 250, ofColor(255,190,155), 98, 20) );
+
+    emissores.push_back( new EmissorParticulas(0, 190, ofColor(250,190,115), 116, 20) );
+    emissores.push_back( new EmissorParticulas(0, 230, ofColor(250,250,255), 116, 20) );
+    emissores.push_back( new EmissorParticulas(0, 250, ofColor(255,190,155), 116, 20) );
+    emissores.push_back( new EmissorParticulas(0, 290, ofColor(255,10,20), 116, 20) );
+    emissores.push_back( new EmissorParticulas(0, 300, ofColor(255,190,110), 116, 20) );
+
+    emissores.push_back( new EmissorParticulas(0, 380, ofColor(200,230,255), 132, 20) );
+    emissores.push_back( new EmissorParticulas(0, 180, ofColor(250,230,155), 132, 20) );
+    emissores.push_back( new EmissorParticulas(0, 220, ofColor(250,230,155), 134, 20) );
+    emissores.push_back( new EmissorParticulas(0, 100, ofColor(200,230,255), 136, 20) );
+    emissores.push_back( new EmissorParticulas(0, 400, ofColor(255,250,255), 138, 20) );
+
+    emissores.push_back( new EmissorParticulas(0, 200, ofColor(255,255,255), 166, 20) );
+    emissores.push_back( new EmissorParticulas(0, 210, ofColor(250,250,250), 166, 20) );
+    emissores.push_back( new EmissorParticulas(0, 205, ofColor(255,255,255), 166, 20) );
+    emissores.push_back( new EmissorParticulas(0, 220, ofColor(252,252,252), 166, 20) );
+    emissores.push_back( new EmissorParticulas(0, 300, ofColor(255,255,255), 166, 20) );
+    emissores.push_back( new EmissorParticulas(0, 250, ofColor(255,255,255), 173, 20) );
+
+
+    emissores.push_back( new EmissorParticulas(0, 30, ofColor(255,255,255), 220, 20) );
+    emissores.push_back( new EmissorParticulas(0, 80, ofColor(190,250,255), 220, 20) );
+    emissores.push_back( new EmissorParticulas(0, 255, ofColor(255,245,185), 220, 20) );
+    emissores.push_back( new EmissorParticulas(0, 290, ofColor(255,245,185), 220, 20) );
+    emissores.push_back( new EmissorParticulas(0, 310, ofColor(252,252,252), 220, 20) );
+    emissores.push_back( new EmissorParticulas(0, 350, ofColor(200,245,255), 220, 20) );
+
     OSCRemoteAddress = "localhost";
     OSCRemotePort = 8084;
     if(!sender.setup(OSCRemoteAddress, OSCRemotePort)) {
@@ -113,9 +153,18 @@ void ofApp::update(){
     ofFill();
     ofDrawRectangle(0,0, WSCREEN, HSCREEN);*/
     ofClear(0,0,0);
+    float tVideo = video->videoPlayer.getPosition()*video->videoPlayer.getDuration();
+    
     for( int i = 0; i < emissores.size(); i++ ) {
-        if(t1 > emissores[i]->tInicio &&
-           emissores[i]->tInicio+emissores[i]->tempoVidaMax+50 > t1) {
+        // Limpa as particulas e reseta o emissor quando 
+        // ja tiver passado mais de 2 minutos
+        if(tVideo > emissores[i]->tInicio+120 && emissores[i]->particulas.size() > 0) {
+            cout << "limpa o ["<<i<<"]\n";
+            emissores[i]->particulas.clear();
+            emissores[i]->qtdSegundos = 0;
+        }
+
+        if(tVideo > emissores[i]->tInicio && emissores[i]->tInicio+120 > tVideo) {
             emissores[i]->update(pixelsColisao,dt);
             emissores[i]->draw();
         }
@@ -200,12 +249,13 @@ void ofApp::draw(){
 //    ofFill();
 //    ofDrawRectangle(120,HSCREEN/2-100, 200, 200);
 //    ofDrawRectangle(620,HSCREEN/2-100, 200, 200);
-//    shaderAgua.begin();
-    //shaderAgua.setUniform1f("time", t1);
+    shaderAgua.begin();
+    shaderAgua.setUniform1f("time", t1);
     
 
+        ofSetColor(255,255,255,255);
     fboParticulas.draw(0,0);
-//    shaderAgua.end();	
+    shaderAgua.end();	
 }
 
 //--------------------------------------------------------------

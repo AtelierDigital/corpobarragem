@@ -7,7 +7,7 @@ EmissorParticulas::EmissorParticulas(float x, float y, ofColor corEmissor, float
     tInicio = inicio;
     tempoVidaMax = vidaMax;
     qtdPorSegundo = 9;
-    qtdMaxParticulas = 150;
+    qtdMaxParticulas = 140;
     aceleracao = ofVec2f(2,0);
     qtdSegundos = 0;
     
@@ -23,6 +23,7 @@ void EmissorParticulas::update(ofPixels &pixelsColisao, float dt) {
     // Adiciona partículas conforme o tempo passa
     int qtdParticulas = particulas.size();
     if(qtdParticulas < qtdPorSegundo*qtdSegundos && qtdParticulas < qtdMaxParticulas) {
+        // 'cout << "\nqtdParticulas:" << qtdParticulas << " qtdPorSegundo*qtdSegundos="<<qtdPorSegundo << "*" << qtdSegundos << " qtdMaxParticulas:"<<qtdMaxParticulas;
         particulas.push_back( new Particula(pos.x, ofRandom(pos.y-30, pos.y+30), cor ));
     }
 
