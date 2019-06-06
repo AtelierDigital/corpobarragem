@@ -12,19 +12,19 @@
 #X obj 163 475 *~;
 #X obj 212 476 *~;
 #X obj 212 228 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6300 1;
+-1 -1 0 1;
 #X obj 163 475 *~;
 #X obj 115 476 *~;
 #X obj 163 227 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6300 1;
+-1 -1 0 1;
 #X obj 67 476 *~;
 #X obj 67 229 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3150 1;
+-1 -1 0 1;
 #X obj 272 475 *~;
 #X obj 272 228 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6300 1;
+-1 -1 0 1;
 #X obj 115 229 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6300 1;
+-1 -1 0 1;
 #X obj 62 163 line 20;
 #X obj 113 163 line 20;
 #X obj 161 162 line 20;
@@ -76,13 +76,13 @@
 #X obj 486 23 inlet;
 #X obj 536 23 inlet;
 #X obj 488 226 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6300 1;
+-1 -1 0 1;
 #X obj 428 227 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6300 1;
+-1 -1 0 1;
 #X obj 331 227 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6300 1;
+-1 -1 0 1;
 #X obj 379 227 vsl 15 64 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6300 1;
+-1 -1 0 1;
 #X obj 355 62 s f3-\$0;
 #X obj 406 62 s f3-beat-\$0;
 #X obj 486 62 s f4-\$0;
@@ -261,6 +261,7 @@
 #X connect 102 0 105 1;
 #X connect 103 0 108 1;
 #X connect 104 0 26 0;
+#X connect 105 0 26 0;
 #X connect 107 0 26 0;
 #X connect 108 0 26 0;
 #X connect 109 0 98 0;
